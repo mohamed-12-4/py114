@@ -1,0 +1,85 @@
+"""
+###############################################################################################
+Task 1
+Seema is 21 years old. For each even birthday (2nd, 4th, 6th ….20) she receives money. For her
+second birthday, she receives 10 USD, and the sum increases by 10 USD with each following odd birthday
+(3rd -> 10, 5th-> 20, 7th-> 30, etc.). Seema has secretly been saving the money for 21 years. On her 21st
+birthday, she wants to buy a washing machine for 150 USD. Write a program that calculates how much
+money she has saved and whether it is enough to buy a washing machine.
+###############################################################################################
+
+sum = 0
+total = 10
+for i in range(2, 22):
+    if i % 2 == 0:
+        total += sum
+
+    if i % 2 != 0:
+        sum += 10
+
+print("she can buy washing machine" if total >= 150 else "She have to save more")
+
+
+"""
+##########################################################################################
+Task 2: Write a Python program that prompts the user to enter an alphabet. Then determine if it is a
+vowel. Letters A,a, E,e, I,i,O, o, and U,u are vowels. If entered alphabet is lower case vowel , convert it
+to higher case.
+Hint: Use of built-in function upper() or lower() is allowed.
+ Consider use of membership operator. 
+##########################################################################################
+"""
+c = input("Enter an alphabet: ")
+assert len(c) == 1 and c.isalpha(), "not a character"
+print(f"{c.upper()} is Vowel" if c.upper() in ["O", "A", "E", "I", "U"] else f"{c.upper()} Not a vowel")
+
+
+"""
+########################################################################################################
+Task 3: A certain University gives 100 point exams that are graded on the scale 90-100:A, 80-89:B,
+70-79:C, 60-69:D, <60:F. Write a program that accepts exam scores as input five times and prints out the
+corresponding grade.
+########################################################################################################
+"""
+def grade_to_letter(grade):
+    """
+    A function that accepts the grade as a number and convert it to the corresponding letter
+
+    """
+    assert grade >= 0 and grade <= 100, "Invalid grade number"
+    if grade >= 90:
+        return "A"
+    elif grade < 90 and grade >= 80:
+        return "B"
+    elif grade < 80 and grade >= 70:
+        return "C"
+    elif grade < 70 and grade >= 60:
+        return "D"
+    else:
+        return "F"
+
+grades = []
+for i in range(5):
+    grades.append(int(input(f"Enter grade number {i+1}: ")))
+for i in range(5):
+    print(f"grade number {i+1} ({grades[i]}): {grade_to_letter(grades[i])}")
+
+
+"""
+##########################################################################################################
+Task 4: Write a program that reads n integers and finds their sum. Note: The first line of the input holds
+the number of integers n. Each of the following n holds an integer. Sum up the numbers and print the
+result.
+#########################################################################################################
+"""
+
+sum = 0
+
+n = int(input("Enter the number of integers: "))
+
+for i in range(n):
+    number = int(input(f"Enter integer {i+1}: "))
+    sum += number
+
+print(f"the sum of the {n} integers is: {sum}")
+

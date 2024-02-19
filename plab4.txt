@@ -1,0 +1,30 @@
+"""""""""""""""""""""""""""""""""""
+TASK: 1
+"""""""""""""""""""""""""""""""""""
+N = int(input("Enter an integer 'N': "))
+
+a = 0
+b = 1
+c = a + b
+sum = 0
+print("The Febonacci series up to the value {}".format(N))
+print(a, b, end = " ")
+while c <= N:
+    print(c, end=" ")
+    sum += c
+    c = a + b
+    a = b
+    b = c
+    
+    
+print("\nThe sum of this series is:", sum)N = int(input("Enter the value of N: "))
+
+"""""""""""""""""""""""""""""""""""
+TASK: 2
+"""""""""""""""""""""""""""""""""""
+for i in range(N, 0, -1):
+    if i == N or i < 3:
+        print(" ".join("$"*i))
+    else:
+        print(" ".join("$" + "*"*(i-2) + "$"))
+    

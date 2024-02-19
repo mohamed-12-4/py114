@@ -1,0 +1,70 @@
+"""
+Write a program to enter an integer and calculate the sum of its digits if the number is odd or calculate
+the average of its digits if the number is even. 
+"""
+number = int(input("Enter an integer: "))
+def sum_of_digits(n):
+    sum = 0
+    while n > 0:
+        sum += n % 10
+        n //= 10
+    return sum
+
+def avg_of_digits(n):
+    sum = 0
+    count = 0
+    while n > 0:
+        sum += n % 10
+        n //= 10
+        count += 1
+    return sum / count
+
+if number % 2 != 0:
+    print(f"{number} is odd and the sum of it digit is: {sum_of_digits(number)}")
+
+if number % 2 == 0:
+    print(f"{number} is even and the average of it digit is: {avg_of_digits(number)}")
+    
+
+"""
+Write a program that prints the day of the week depending on the given number (1 … 7) or "Error!" if
+invalid input is given.
+"""
+"""
+Write a program that prints the day of the week depending on the given number (1 … 7) or "Error!" if
+invalid input is given.
+"""
+import os
+n = int(input("Enter week number:"))
+
+if n < 1 or n > 7:
+    print("Error!")
+    os._exit(0)
+
+m = {
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+    7: "Sunday",
+}
+
+print(m[n])
+
+
+
+
+"""
+Write a program that finds the count of all numbers in the range [1 … 1000], that end in 3 or 5.
+"""
+
+count = 0
+
+for i in range(0, 1001):
+    if i % 10 == 3 or i % 10 == 5:
+        count += 1
+print(f"the count of numbers ending with 3 or 5 is: {count}")
+
+
